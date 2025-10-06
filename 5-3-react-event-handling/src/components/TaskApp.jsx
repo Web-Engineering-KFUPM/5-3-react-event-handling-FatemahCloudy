@@ -24,6 +24,7 @@ export default function TaskApp() {
     // TODO: set tasks to empty array
       setTasks([]);
   };
+  
 
   return (
       <section className="card">
