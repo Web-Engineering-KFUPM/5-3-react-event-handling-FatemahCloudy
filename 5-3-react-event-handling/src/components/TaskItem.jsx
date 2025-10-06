@@ -12,7 +12,7 @@ export default function TaskItem({ task, onDelete }) {
           className="iconBtn iconBtn--danger"
           aria-label="Delete task"
           title="Delete"
-          // TODO: onClick={() => onDelete(id)}
+          onClick={() => onDelete(task.id)}
         >
           🗑️
         </button>

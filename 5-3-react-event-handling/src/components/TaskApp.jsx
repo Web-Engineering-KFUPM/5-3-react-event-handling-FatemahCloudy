@@ -7,7 +7,10 @@ export default function TaskApp() {
     const [tasks, setTasks] = useState([]);
 
   const handleSubmit = () => {
-   
+      if (text.trim()) {
+          setTasks(prev => [...prev, { id: Date.now(), text }]); // Add new task
+          setText("");
+      }
   };
 
   
@@ -19,11 +22,11 @@ export default function TaskApp() {
   
   const handleClearAll = () => {
     // TODO: set tasks to empty array
+      setTasks([]);
   };
 
   return (
       <section className="card">
-          {/*Controlled Input */}
           <div className="inputRow">
               <input
                   type="text"
@@ -46,6 +49,7 @@ export default function TaskApp() {
           <TaskList /* tasks={tasks} onDelete={handleDelete} */ />
 
           {/*Clear All */}
+          <TaskList tasks={tasks} onDelete={handleDelete} />
           <div className="footerRow">
               <button className="btn btn--ghost" onClick={handleClearAll}>
                   Clear All
