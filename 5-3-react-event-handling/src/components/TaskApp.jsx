@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import TaskList from "./TaskList";
 
 export default function TaskApp() {
-    
+
     const [text, setText] = useState("");
+    const [tasks, setTasks] = useState([]);
 
   const handleSubmit = () => {
    
@@ -12,6 +13,7 @@ export default function TaskApp() {
   
   const handleDelete = (id) => {
     // TODO: filter tasks by id to remove the clicked one
+      setTasks(prev => prev.filter(task => task.id !== id));
   };
 
   
