@@ -7,10 +7,10 @@ export default function TaskApp() {
     const [tasks, setTasks] = useState([]);
 
   const handleSubmit = () => {
-      if (text.trim()) {
-          setTasks(prev => [...prev, { id: Date.now(), text }]); // Add new task
-          setText("");
-      }
+      if (text.trim() == "") {return;}
+      setTasks(prev => [...prev, { id: Date.now(), text }]); // Add new task
+      setText("");
+
   };
 
   
@@ -24,7 +24,7 @@ export default function TaskApp() {
     // TODO: set tasks to empty array
       setTasks([]);
   };
-  
+
 
   return (
       <section className="card">
